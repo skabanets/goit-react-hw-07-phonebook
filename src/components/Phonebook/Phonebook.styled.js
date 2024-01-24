@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PhonebookWrapper = styled.div`
-  margin: 0 40px;
+  margin: 0 40px 40px 40px;
 `;
 
 export const Title = styled.h1`

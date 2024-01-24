@@ -7,12 +7,12 @@ import {
   FilterErrorMessage,
 } from './Contacts.styled';
 import { selectFilters } from '../../redux/filter/slice';
-import { deleteContact, selectContacts } from '../../redux/contacts/slice';
+import { selectContacts } from '../../redux/contacts/slice';
+import { deleteContact } from '../../redux/contacts/operation';
 
 export const Contacts = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilters);
-
   const dispatch = useDispatch();
 
   const getFilteredContacts = () => {

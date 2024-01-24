@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, FormButton, Input, InputLabel } from './ContactForm.styled';
 import { useForm } from 'react-hook-form';
 import { findContact } from 'helpers/findContact';
-import { addContact, selectContacts } from '../../redux/contacts/slice';
+import { selectContacts } from '../../redux/contacts/slice';
+import { addContact } from '../../redux/contacts/operation';
 
 export const ContactForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -11,7 +12,7 @@ export const ContactForm = () => {
 
   const submit = data => {
     if (findContact(data.name, contacts)) return;
-    dispatch(addContact({ ...data }));
+    dispatch(addContact(data));
     reset();
   };
 
